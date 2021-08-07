@@ -4,7 +4,7 @@ from .models import Recipe, Plant
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Recipe
-        fields = ('id', 'url', 'name', 'description', 'prep_time', 'cook_time', 'created_at')
+        fields = ('id', 'url', 'name', 'ingredients', 'tools', 'costs', 'procedure', 'notes', 'created_at')
 
 class PlantSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
