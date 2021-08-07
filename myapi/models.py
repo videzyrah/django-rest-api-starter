@@ -6,8 +6,6 @@ class Recipe(models.Model):
     tools = models.CharField(max_length=255, default="Instapot")
     costs = models.CharField(max_length=255)
     procedure = models.TextField()
-    prep_time = models.IntegerField(help_text="in minutes")
-    cook_time = models.IntegerField(help_text="in minutes")
     notes = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
