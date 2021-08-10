@@ -14,6 +14,7 @@ class Recipe(models.Model):
 
 class Plant(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
+    screen_name = models.CharField(max_length=255)
     scientific_name = models.CharField(max_length=255)
     common_names =  models.CharField(max_length=255)
     edible_parts = models.CharField(max_length=255)
@@ -39,7 +40,10 @@ class Plant(models.Model):
         default='a',
         help_text='help text',
     )
+    image = models.CharField(max_length = 200)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    retailers= models.CharField(max_length=255)
     def __str__(self):
-        return self.name
+        return self.screen_name
 
 
