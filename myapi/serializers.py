@@ -9,4 +9,17 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 class PlantSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Plant
-        fields = ('id', 'url', 'scientific_name', 'common_names', 'edible_parts', 'minZone', 'maxZone', 'soil_types', 'created_at')
+        fields = ('id', 
+                  'url',
+                  'screen_name',
+                  'scientific_name', 
+                  'common_names', 
+                  'edible_parts', 
+                  'minZone', 'maxZone', 
+                  'soil_types', 
+                  'drought_tolerance',
+                  'created_at',
+                  'image',
+                  'price',
+                  'retailers',
+                  )
