@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Recipe, Plant, Retailer
-from .serializers import RecipeSerializer, PlantSerializer, RetailerSerializer
+from .serializers import GrowerSerializer, RecipeSerializer, PlantSerializer, RetailerSerializer
 
 
 class RecipeViewSet(viewsets.ModelViewSet):
@@ -14,4 +14,4 @@ class PlantViewSet(viewsets.ModelViewSet):
 
 class RetailerViewSet(viewsets.ModelViewSet):
     queryset = Retailer.objects.all().order_by('id')
-    serializer_class = RetailerSerializer
+    serializer_class = GrowerSerializer
