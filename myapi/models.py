@@ -12,6 +12,16 @@ class Recipe(models.Model):
     def __str__(self):
         return self.name
 
+class Retailer(models.Model):
+    name = models.CharField(max_length=255)
+    link = models.URLField()
+    contact = models.CharField(max_length=255)
+    notes = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
 class Plant(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     screen_name = models.CharField(max_length=255)
@@ -42,7 +52,7 @@ class Plant(models.Model):
     )
     image = models.CharField(max_length = 200)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    retailers= models.CharField(max_length=255)
+    retailers= models.ManyToManyField(Retailer)
     def __str__(self):
         return self.screen_name
 
