@@ -6,14 +6,14 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
         model = Recipe
         fields = ('id', 'url', 'name', 'ingredients', 'tools', 'costs', 'procedure', 'notes', 'created_at')
 
-class RetailerSerializer(serializers.RelatedField):
+class RetailerSerializer(serializers.HyperlinkedModelSerializer):
     
     def to_representation(self, value):
          return '%s: %s' % (value.name, value.contact)
 
     class Meta:
         model = Retailer
-        fields = ('id', 'url', 'contact', 'name', 'plant_list', 'link', 'notes')
+        fields = ('id', 'url', 'contact', 'name', 'link', 'notes')
         
 class PlantSerializer(serializers.HyperlinkedModelSerializer):
     retailers = RetailerSerializer(read_only=True, many=True)
@@ -35,4 +35,7 @@ class PlantSerializer(serializers.HyperlinkedModelSerializer):
                   'retailers',
                   )
 
-
+class GrowerSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Retailer
+        fields = ('id', 'url', 'contact', 'name', 'plant_list', 'link', 'notes')

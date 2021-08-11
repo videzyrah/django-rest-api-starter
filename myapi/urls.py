@@ -5,6 +5,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register(r'recipes', views.RecipeViewSet)
 router.register(r'plants', views.PlantViewSet)
+router.register(r'retailers', views.RetailerViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
