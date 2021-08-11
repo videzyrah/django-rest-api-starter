@@ -8,7 +8,7 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 
 class RetailerSerializer(serializers.RelatedField): 
     def to_representation(self, value):
-         return '<a href="%s">%s</a>' % (value.link, value.name)
+         return "<a href= '%s'>%s</a>" % (value.link, value.name)
         
 class PlantSerializer(serializers.HyperlinkedModelSerializer):
     retailers = RetailerSerializer(read_only=True, many=True)
