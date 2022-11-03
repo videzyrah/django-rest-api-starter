@@ -4,7 +4,7 @@ from .models import Recipe, Plant, Retailer
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Recipe
-        fields = ('id', 'url', 'name', 'ingredients', 'tools', 'costs', 'procedure', 'notes', 'created_at')
+        fields = ('id', 'url', 'name', 'ingredients', 'tools', 'costs', 'procedure', 'notes', 'image_url', 'created_at' )
 
 class RetailerSerializer(serializers.RelatedField): 
     def to_representation(self, value):

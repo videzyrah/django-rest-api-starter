@@ -7,6 +7,7 @@ class Recipe(models.Model):
     costs = models.CharField(max_length=255)
     procedure = models.TextField()
     notes = models.TextField()
+    image_url = models.CharField(max_length = 200, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
